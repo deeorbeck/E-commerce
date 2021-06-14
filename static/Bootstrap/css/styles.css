@@ -1,0 +1,95 @@
+.basket{
+    width: 40px;
+    height: 30px;
+}
+.brand {
+    width:150px;
+    height: 30px;
+}
+.footer {
+    margin-top: 100%;
+}
+body {
+    background-image:url("https://www.w3schools.com/images/w3lynx_200.png") no-repeat;
+}
+.link {
+    margin: 20px;
+    text-decoration: none;
+    font-style: none;
+    color: #555;
+}
+.containerno {
+    margin: auto;
+    width: 20%;
+    height: 50%;
+}
+.signlist{
+ background-color: #26CBF0FF;
+ margin: 50px auto;
+ padding: 40px 60px;
+ width: 30%;
+ height: 30%;
+ border-radius: 30px;
+ box-shadow: 5px 5px 50px #A5DEF0FF;
+
+
+}
+.lite {
+    margin: 10px auto;
+    border-radius: 5px;
+    border: 1px solid #CAE2F0FF;
+    width: 90%;
+}
+.imagefor,.card .m-2 {
+    margin: 0 auto;
+    width: 90%;
+    height: 200px;
+    object-fit:cover;
+}
+#crd{
+ border: 1px solid #A5F0F0FF;
+ box-shadow: 2px 2px 6px #A5F0F0FF;
+ }
+ .image{
+ width: 70px;
+ height: 60px;
+ }
+ .menu {
+   border-bottom: 1px solid #555;
+ }
+
+ .ns {
+    box-shadow: 2px 2px 5px #555;
+    border-radius: 5px;
+ }
+
+ .title{
+
+    color: red;
+
+ }
+.imgforicon{
+    width: 8%;
+    position: absolute;
+    top: 30%;
+
+}
+.imgforicon1{
+    width: 8%;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    position: absolute;
+    bottom: 30%;
+
+
+
+}
+.bs {
+    border: 2px solid green;
+    border-radius: 5px;
+    color: green;
+    text-align: center;
+    padding: 2px 0;
+    margin-top: 10px;
+
+}

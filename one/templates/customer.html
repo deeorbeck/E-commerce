@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+<title>{% block title%}Dashboard{% endblock %}</title>
+{% block content%}
+<div class="container">
+        {% for i in messages %}
+        <div class="bs">
+          {{i}}
+        </div>
+        {% endfor %}
+</div>
+<div class="container">
+    <div class="row mt-3">
+        {% if products %}
+        {% for product in products %}
+        {% if product.quantity >= 1 %}
+        <div class="col-md-4 mt-2">
+            <div class="card m-2" id="crd">
+                <img class="imagefor" src="{{product.photo}}"/>
+                <div class="card card-body">
+                    <p style="font-size: 100%;width: 90%;font-family: 'Josefin Sans', sans-serif;">{{product.name}}</p>
+                    <span class="" style="font-size: 80%;position: absolute;left: 75%;font-family: 'Fjalla One', sans-serif;
+font-family: 'Josefin Sans', sans-serif;">${{product.price}}</span>
+                    <span class="row mt-2">
+                        <a class="btn btn-outline-info col-md-6" href="{% url 'customer'%}?id={{product.id}}">Add to cart</a>
+                        <a  class="btn btn-outline-secondary col-md-6" href="{% url 'view' product.id %}">View Product</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+        {% endfor %}
+        {% else %}
+        <h1>No Products</h1>
+        {% endif%}
+    </div>
+
+</div>
+{% endblock content%}
+
+
+

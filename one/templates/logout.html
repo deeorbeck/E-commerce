@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/styles.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="{% static 'Bootstrap/js/popper.js'%}"></script>
+    <script src="{% static 'Bootstrap/js/jquery.js'%}"></script>
+    <script src="{% static 'Bootstrap/js/js.js'%}"></script>
+
+</head style="font-family: 'Noto Sans JP', sans-serif;">
+<body class="p-3">
+
+<form method="post" action="">
+    You are loguot ?
+
+    {% csrf_token %}
+    <input class="btn btn-outline-danger" type="submit" name="Logout" value="Logout">
+</form>
+</body>
+</html>

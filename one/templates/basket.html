@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<title>{% block title%}Basket{% endblock %}</title>
+{% block content%}
+<div class="container mt-2">
+    <div class="nav nav-light mt-3 mb-2 p-3 ns">
+        <a class="btn btn-outline-warning" href="/">Go Back</a>
+        <div class="title" style="margin-left: 70%;">Total: ${{total}} | <a href="{% url 'pay'%}">To'lash</a></div>
+    </div>
+    {%if mychoices %}
+    {% for ch in mychoices %}
+    <div class="row mt-3">
+        <div class="col-md-10">
+            <div class="menu">
+                <img class="image" src="{{ch.choise.photo}}"/>
+                <b> Nomi:</b> {{ch.choise.name}}
+                <b class="ml-3">Narxi:</b>${{ch.choise.price}}
+            </div>
+        </div>
+        <table class="col-md-2" style="border-bottom: 1px solid #555;">
+            <tr>
+                <td style="font-size: 20px;box-sizing: border-box;">
+                    x{{ch.quantity}}
+                </td>
+                <td>
+                    <a href="{% url 'basket'%}?id={{ch.id}}&quantity=up">
+                        <img class="imgforicon" src="https://static.vecteezy.com/system/resources/previews/001/200/602/original/triangle-png.png"/>
+                    </a>
+                    <a href="{% url 'basket'%}?id={{ch.id}}&quantity=down">
+                        <img class="imgforicon1" src="https://static.vecteezy.com/system/resources/previews/001/200/602/original/triangle-png.png"/>
+                    </a>
+                </td>
+                <td>
+                    <div style="margin-left: 20%;"><a class="btn btn-outline-danger" href="{% url 'basket'%}?id={{ch.id}}&quantity=delete">Delete</a></div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <h1>No products</h1>
+    {% endif %}
+</div>
+{% endblock content%}

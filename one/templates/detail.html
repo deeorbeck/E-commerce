@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<title>{% block title%}Dashboard{% endblock %}</title>
+{% block content%}
+    <div class="container">
+        <div class="nav nav-light mt-3 mb-2 p-1 ns">
+            <a class="btn btn-outline-warning pb-0" href="/">Go Back</a>
+            <div class="title" style="margin-left: 70%;">${{product.price}}   |   <a class="btn btn-outline-info" href="{% url 'customer'%}?id={{product.id}}">Add to cart</a></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <img class="card" style="width: 100%;border-radius: 5px;box-shadow: 2px 2px 3px #555;" src="{{product.photo}}" />
+            </div>
+            <div class="col-md-4">
+                  <h3 class="m-4">{{product.name}}</h3>
+                  <p> {{product.description}}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content%}

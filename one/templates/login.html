@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/styles.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="{% static 'Bootstrap/js/popper.js'%}"></script>
+    <script src="{% static 'Bootstrap/js/jquery.js'%}"></script>
+    <script src="{% static 'Bootstrap/js/js.js'%}"></script>
+
+</head>
+<body style="font-family: 'Noto Sans JP', sans-serif;">
+
+<form  class="signlist" method="post" action="">
+    <h1 style="text-align: center;">Log In</h1>
+    {% csrf_token %}
+    <input required class="lite" type="text" value="username" name="username"/>
+    <a href="{% url 'reset_password'%}" class="btn pl-5" style="font-size: 12px;margin: 0;padding: 0;margin-left: 80px;">Forgot your password?</a>
+    <input required  class="lite" type="password" value="password" name="password">
+    {% for msg in messages %}
+<div style="padding: 5px;background-color: #555;color: white; font-size: 100%; width: 90%; " class="lite">{{msg}}</div>
+{% endfor %}
+    <input type="submit" class="btn btn-outline-dark lite" name="Login User" value="Login">
+    <div style="color:green;">Don't have an account? <a href="{% url 'signup'%}">SignUp</a></div>
+</form>
+
+
+</body>
+</html>

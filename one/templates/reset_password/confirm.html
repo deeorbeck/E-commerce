@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <title>Password Confirm</title>
+    <link rel="stylesheet" href="{% static 'Bootstrap/css/style.css'%}">
+</head>
+<body class="container" style="background-color: #B3F0C5FF;">
+    <h1>Password Confirm</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="btn btn-outline-info" type="submit" name="Confirm" value="Confirm">
+</form>
+</body>
+</html>

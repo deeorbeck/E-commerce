@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static%}
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%  static 'Bootstrap/css/styles.css'%}">
+</head>
+<body style="font-family: 'Noto Sans JP', sans-serif;">
+
+<form  class="signlist" method="post" action="" class="lite">
+    <h1 style="text-align: center;">Sign Up</h1>
+    {% csrf_token %}
+    <input required  class="lite" type="text" name="username" placeholder="Username" >
+    <input required  class="lite" type="email" name="email" placeholder="Email">
+    <input required  class="lite" type="password" name="password1" placeholder="Password">
+    <input required  class="lite" type="password" name="password2" placeholder="Confirm">
+{% if form.errors %}
+<div style="padding: 5px;background-color: #555;color: white; font-size: 50%; width: 90%; " class="lite">{{form.errors}}</div>
+{% endif %}
+    <input  class="btn btn-outline-dark lite" type="submit" name="Create User" value="Sign Up">
+    <div style="color:green;">Already have an account? <a href="{% url 'login'%}">Login</a></div>
+
+</form>
+
+
+
+</body>
+</html>
